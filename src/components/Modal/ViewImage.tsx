@@ -22,13 +22,27 @@ export function ModalViewImage({
   // TODO MODAL WITH IMAGE AND EXTERNAL LINK
   return (
     <>
-      <h1>hello</h1>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} size="md">
         <ModalOverlay />
-        <ModalContent>
-          <ModalBody>asdf</ModalBody>
+        <ModalContent maxW="900px" minW="unset" w="auto" maxH="600px" h="auto">
+          <ModalBody p="0" w="auto" maxH="600px">
+            <Image
+              src={imgUrl}
+              alt="Image visualization"
+              objectFit="scale-down"
+              maxH="600"
+            />
+          </ModalBody>
 
-          <ModalFooter>teste link original</ModalFooter>
+          <ModalFooter
+            justifyContent="flex-start"
+            bgColor="pGray.800"
+            borderBottomRadius="md"
+          >
+            <Link href={imgUrl} target="_blank">
+              Abrir original
+            </Link>
+          </ModalFooter>
         </ModalContent>
       </Modal>
     </>
